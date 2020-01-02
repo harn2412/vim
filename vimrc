@@ -28,6 +28,7 @@ Plugin 'google/vim-glaive'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdcommenter'
+"Plugin 'h-youhei/vim-ibus'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
