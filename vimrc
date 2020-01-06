@@ -21,14 +21,15 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 "Plugin 'tell-k/vim-autopep8'
-Plugin 'google/yapf'
-Plugin 'google/vim-codefmt'
-Plugin 'google/vim-maktaba'
-Plugin 'google/vim-glaive'
+"Plugin 'google/yapf'
+"Plugin 'google/vim-codefmt'
+"Plugin 'google/vim-maktaba'
+"Plugin 'google/vim-glaive'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'h-youhei/vim-ibus'
+Plugin 'psf/black'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,6 +57,9 @@ let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope = 0
 let g:pymode_run = 0
+
+" setup Back Formatter
+autocmd BufWritePre *.py execute ':Black'
 
 " setup jedi-vim
 " disable popup when autocomplete
@@ -105,21 +109,21 @@ let g:airline_theme = 'molokai'
 
 
 " I only remind me write code shorter :)
-autocmd FileType python set colorcolumn=80
+autocmd FileType python set colorcolumn=88
 
 " Configuration for Google Format Code
-augroup autoformat_settings
-  autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
-  autocmd FileType dart AutoFormatBuffer dartfmt
-  autocmd FileType go AutoFormatBuffer gofmt
-  autocmd FileType gn AutoFormatBuffer gn
-  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
-  autocmd FileType java AutoFormatBuffer google-java-format
-  autocmd FileType python AutoFormatBuffer yapf
-  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
-  autocmd FileType vue AutoFormatBuffer prettier
-augroup END
+"augroup autoformat_settings
+  "autocmd FileType bzl AutoFormatBuffer buildifier
+  "autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  "autocmd FileType dart AutoFormatBuffer dartfmt
+  "autocmd FileType go AutoFormatBuffer gofmt
+  "autocmd FileType gn AutoFormatBuffer gn
+  "autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  "autocmd FileType java AutoFormatBuffer google-java-format
+  "autocmd FileType python AutoFormatBuffer yapf
+  "" Alternative: autocmd FileType python AutoFormatBuffer autopep8
+  "autocmd FileType vue AutoFormatBuffer prettier
+"augroup END
 
 " Move between split windows with a single shortcut (No need to press Ctrl+W
 " first)
