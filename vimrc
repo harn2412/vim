@@ -28,7 +28,7 @@ Plugin 'google/vim-glaive'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'h-youhei/vim-ibus'
+Plugin 'h-youhei/vim-ibus'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,6 +47,11 @@ filetype plugin indent on    " required
 
 " command for you to re-install Vundle before do anything else
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+
+" vim-ibus configuration
+let g:ibus#layout = 'xkb:us::eng'
+let g:ibus#engine = 'Bamboo'
 
 " setup python-mode
 let g:pymode_options_max_line_length=120
